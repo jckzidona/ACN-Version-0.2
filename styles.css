@@ -1,0 +1,325 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * AI Case Note Assistant — design system.
+ * Enterprise records tool: ink navy chrome, paper canvas, teal action colour.
+ * Organization branding overrides --primary / --accent at runtime.
+ */
+
+@theme inline {
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-section-navy: var(--section-navy);
+  --color-section-navy-line: var(--section-navy-line);
+  --color-section-navy-ink: var(--section-navy-ink);
+  --color-section-navy-deep: var(--section-navy-deep);
+  --color-section-teal: var(--section-teal);
+  --color-section-teal-line: var(--section-teal-line);
+  --color-section-teal-ink: var(--section-teal-ink);
+  --color-section-teal-deep: var(--section-teal-deep);
+  --color-section-amber: var(--section-amber);
+  --color-section-amber-line: var(--section-amber-line);
+  --color-section-amber-ink: var(--section-amber-ink);
+  --color-section-amber-deep: var(--section-amber-deep);
+  --color-section-on-strong: var(--section-on-strong);
+  --color-sheet: var(--sheet);
+  --color-sheet-ink: var(--sheet-ink);
+  --color-sheet-line: var(--sheet-line);
+  --color-sheet-pink: var(--sheet-pink);
+  --color-sheet-mint: var(--sheet-mint);
+  --color-sheet-green: var(--sheet-green);
+  --color-sheet-orange: var(--sheet-orange);
+  --color-sheet-lavender: var(--sheet-lavender);
+  --color-sheet-yellow: var(--sheet-yellow);
+  --color-sheet-lime: var(--sheet-lime);
+  --color-sheet-sky: var(--sheet-sky);
+  --color-sheet-orchid: var(--sheet-orchid);
+  --color-sheet-peach: var(--sheet-peach);
+  --color-sheet-blue: var(--sheet-blue);
+  --color-sheet-rose: var(--sheet-rose);
+  --color-sheet-manual: var(--sheet-manual);
+  --shadow-panel: 0 1px 2px oklch(0.22 0.03 240 / 0.06), 0 8px 24px oklch(0.22 0.03 240 / 0.06);
+  --shadow-raised: 0 2px 4px oklch(0.22 0.03 240 / 0.08), 0 16px 40px oklch(0.22 0.03 240 / 0.1);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.977 0.004 106);
+  --foreground: oklch(0.24 0.024 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.24 0.024 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.24 0.024 250);
+  --primary: oklch(0.45 0.075 205);
+  --primary-foreground: oklch(0.985 0.005 200);
+  --secondary: oklch(0.955 0.008 240);
+  --secondary-foreground: oklch(0.3 0.03 250);
+  --muted: oklch(0.955 0.008 240);
+  --muted-foreground: oklch(0.52 0.02 250);
+  --accent: oklch(0.63 0.11 190);
+  --accent-foreground: oklch(0.18 0.03 240);
+  --destructive: oklch(0.53 0.19 25);
+  --destructive-foreground: oklch(0.985 0.005 200);
+  --success: oklch(0.55 0.11 155);
+  --success-foreground: oklch(0.985 0.005 200);
+  --warning: oklch(0.72 0.13 75);
+  --warning-foreground: oklch(0.22 0.03 250);
+  --border: oklch(0.9 0.008 250);
+  --input: oklch(0.9 0.008 250);
+  --ring: oklch(0.45 0.075 205);
+  --sidebar: oklch(0.25 0.032 246);
+  --sidebar-foreground: oklch(0.9 0.012 240);
+  --sidebar-primary: oklch(0.63 0.11 190);
+  --sidebar-primary-foreground: oklch(0.18 0.03 240);
+  --sidebar-accent: oklch(0.31 0.035 246);
+  --sidebar-accent-foreground: oklch(0.97 0.005 240);
+  --sidebar-border: oklch(0.34 0.03 246);
+  --sidebar-ring: oklch(0.63 0.11 190);
+  --background-overlay: oklch(0.977 0.004 106 / 0.86);
+
+  /* Monthly Activity Report accordion: one tinted surface per section. */
+  --section-navy: oklch(0.972 0.008 246);
+  --section-navy-line: oklch(0.885 0.016 246);
+  --section-navy-ink: oklch(0.36 0.055 246);
+  --section-navy-deep: oklch(0.33 0.06 246);
+  --section-teal: oklch(0.972 0.012 190);
+  --section-teal-line: oklch(0.875 0.028 190);
+  --section-teal-ink: oklch(0.42 0.075 190);
+  --section-teal-deep: oklch(0.45 0.09 190);
+  --section-amber: oklch(0.975 0.013 80);
+  --section-amber-line: oklch(0.89 0.035 80);
+  --section-amber-ink: oklch(0.48 0.09 55);
+  --section-amber-deep: oklch(0.52 0.11 55);
+  --section-on-strong: oklch(0.985 0.005 200);
+
+  /* Counselling Monthly Activity Report: fills copied from the manager's Excel template. */
+  --sheet: #ffffff;
+  --sheet-ink: #000000;
+  --sheet-line: #9a9a9a;
+  --sheet-pink: #ff99ff;
+  --sheet-mint: #99ffcc;
+  --sheet-green: #66ff66;
+  --sheet-orange: #ffc000;
+  --sheet-lavender: #ccccff;
+  --sheet-yellow: #ffff66;
+  --sheet-lime: #99ff99;
+  --sheet-sky: #83cceb;
+  --sheet-orchid: #e49edd;
+  --sheet-peach: #f7c7ac;
+  --sheet-blue: #a6c9ec;
+  --sheet-rose: #ff7c80;
+  --sheet-manual: #e97132;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.015em;
+    font-weight: 600;
+  }
+}
+
+@utility surface {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-panel);
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-mono);
+}
+
+@utility section-chip {
+  display: inline-flex;
+  height: 1.25rem;
+  width: 1.25rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-section-on-strong);
+}
+
+@utility grid-paper {
+  background-image:
+    linear-gradient(to right, oklch(0.24 0.024 250 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.24 0.024 250 / 0.045) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/*
+ * Reminder ticker: text travels from the left edge towards the right.
+ * Two identical copies sit side by side; the track starts shifted left by
+ * exactly one copy and travels back to zero, so the loop is seamless.
+ */
+.marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+}
+
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee-scroll-right 30s linear infinite;
+}
+
+.marquee-copy {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation-duration: 90s;
+  }
+}
+
+/*
+ * App-wide section tints: every fill-in box (a card-style <section> or
+ * <fieldset> that holds inputs) and every accordion item cycles
+ * navy → teal → amber. Sub-sections inside stay white with a soft tinted
+ * border so workers can tell section from sub-section. Unlayered so it beats bg-card;
+ * panels that already set bg-section-* classes are excluded.
+ */
+  section.bg-card:not([class*="bg-section"]):has(input, textarea, select, [role="combobox"]),
+  fieldset:has(input, textarea, select, [role="combobox"]),
+  .acn-tint-item {
+    --tint-bg: var(--section-navy);
+    --tint-line: var(--section-navy-line);
+    --tint-ink: var(--section-navy-ink);
+    --tint-deep: var(--section-navy-deep);
+    background-color: var(--tint-bg);
+    border-color: var(--tint-line);
+    border-left: 4px solid var(--tint-deep);
+  }
+  section.bg-card:not([class*="bg-section"]):has(input, textarea, select, [role="combobox"]):nth-of-type(3n + 2),
+  fieldset:has(input, textarea, select, [role="combobox"]):nth-of-type(3n + 2),
+  .acn-tint-item:nth-child(3n + 2) {
+    --tint-bg: var(--section-teal);
+    --tint-line: var(--section-teal-line);
+    --tint-ink: var(--section-teal-ink);
+    --tint-deep: var(--section-teal-deep);
+  }
+  section.bg-card:not([class*="bg-section"]):has(input, textarea, select, [role="combobox"]):nth-of-type(3n),
+  fieldset:has(input, textarea, select, [role="combobox"]):nth-of-type(3n),
+  .acn-tint-item:nth-child(3n) {
+    --tint-bg: var(--section-amber);
+    --tint-line: var(--section-amber-line);
+    --tint-ink: var(--section-amber-ink);
+    --tint-deep: var(--section-amber-deep);
+  }
+  section.bg-card:not([class*="bg-section"]):has(input, textarea, select, [role="combobox"]) > :is(h2, h3, div) > :is(h2, h3),
+  section.bg-card:not([class*="bg-section"]):has(input, textarea, select, [role="combobox"]) > :is(h2, h3),
+  fieldset > legend,
+  .acn-tint-item > h3 > button {
+    color: var(--tint-ink);
+  }
+  .acn-tint-item {
+    border-radius: var(--radius-md);
+    padding-inline: 1rem;
+  }
+  .acn-tint-item + .acn-tint-item { margin-top: 0.625rem; }
+  /* Sub-sections: white panel, dashed tinted border. */
+  :is(section.bg-card, fieldset, .acn-tint-item) :is(fieldset, .rounded-md.border, .rounded-lg.border):not(input, textarea, select, button, [role="combobox"]) {
+    background-color: var(--color-card);
+    border-color: var(--tint-line, var(--color-border));
+    border-left-width: 1px;
+    border-left-style: dashed;
+  }
+  /* Fields stay crisp white on tinted panels. */
+  :is(section.bg-card, fieldset, .acn-tint-item) :is(input:not([type="checkbox"], [type="radio"]), textarea, select, [role="combobox"]) {
+    background-color: var(--color-card);
+  }
+
+/* The manager's printable sheet keeps its own Excel colours, not section tints. */
+.counselling-report-sheet.counselling-report-sheet {
+  background-color: var(--sheet);
+  border-color: var(--sheet-line);
+  border-left-style: solid;
+}
+.counselling-report-sheet :is(input, textarea) {
+  background-color: var(--sheet);
+  color: var(--sheet-ink);
+}
+
+/* Questionnaire headings and choices use their matching report cell colours. */
+.counselling-report-form .acn-tint-item.acn-tint-item {
+  background-color: var(--sheet); border-color: var(--sheet-line); border-left-color: var(--sheet-line);
+}
+.counselling-report-form .acn-tint-item > h3 > button { color: var(--sheet-ink); }
