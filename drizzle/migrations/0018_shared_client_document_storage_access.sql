@@ -1,0 +1,5 @@
+CREATE OR REPLACE FUNCTION public.can_access_shared_client_path(_path text) RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path=public AS $$ SELECT EXISTS(SELECT 1 FROM public.clients c JOIN public.profiles p ON p.id=auth.uid() AND p.organization_id=c.organization_id AND p.status='active' WHERE c.id::text=split_part(_path,'/',1)); $$;
+REVOKE ALL ON FUNCTION public.can_access_shared_client_path(text) FROM PUBLIC,anon;
+GRANT EXECUTE ON FUNCTION public.can_access_shared_client_path(text) TO authenticated,service_role;
+ALTER POLICY "staff read client docs" ON storage.objects USING (bucket_id='client-documents' AND public.can_access_shared_client_path(name));
+ALTER POLICY "staff upload client docs" ON storage.objects WITH CHECK (bucket_id='client-documents' AND public.can_access_shared_client_path(name));

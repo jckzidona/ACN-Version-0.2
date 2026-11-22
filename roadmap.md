@@ -1,0 +1,48 @@
+# Roadmap (feature expansion)
+- [x] Diagnose and fix Settlement worker monthly report submission crash; verified worker submission and saved report read-back
+- [x] Audit and harden voice transcription, preserve failed recordings, and verify recovery with regression tests
+- [x] Correct welcome-page product name and add restrained privacy/data-handling wording
+- [x] Add public contact/demo form and Gmail contact link
+- [x] Compact welcome page with first-screen actions and on-demand details
+- [x] Prepare and visually check the two-worker one-page case-study draft
+- [ ] Finalize case study for public sharing — awaiting measured results and publication permission
+- [x] Explain professional email options for ACN
+- [x] Monitoring: place Settlement export staff details above tables
+- [x] Monitoring: include Counselling custom-period submissions before April 1 while keeping YTD scoped
+- [x] Monitoring: allow distinct same-name clients without a matching known birth date
+- [x] Settlement monthly layout: staff details above tables, submit after comments, same worker and manager sheet
+- [x] Match Counselling Fill in report colours to Responses & export
+- [x] Apply spreadsheet presentation to Settlement Client Services Summary screen and exports
+- [x] Apply spreadsheet presentation only to Reports & Statistics Excel/PDF exports, with existing information only
+- [x] Restore original Settlement Client Services Summary and Settlement/Counselling Reports & Statistics layouts and exports; keep both Monthly Activity Reports unchanged
+- [x] Adapt Settlement Monthly Activity Report screen and Excel/PDF to the Counselling spreadsheet-style layout
+- [x] Shared cross-department client directory, duplicate-registration warning and private service records
+- [x] Phase 1: SOAP for Counselling, Client Appearance, follow-up tasks, note time tracking
+- [x] Phase 2: enrollment/intake/confidentiality, family cases, referrals tab, documents tab
+- [ ] Project Office view-only role (needs decision 3)
+- [x] Phase 3: appointments, AI follow-up email (Outlook draft), shared Outlook calendar sync
+- [ ] Phase 4: monthly Excel, monthly stats, weekly audit report, automation
+- [ ] Phase 5: notification bell
+- [x] Group sessions (CARMiS-style)
+- [x] Counselling reports tab (Momentum-style): caseload, sessions, outcomes, wait times
+- [x] CARMiS-style Organization Settings: agency, departments, programs, activities, funders, referrals, templates and staff access
+- [x] Replace the case-note reminder pop-up with a continuous left-to-right scrolling ticker
+- [x] Make Reports & statistics the manager landing page while preserving the worker dashboard
+- [x] Place Appearance in the required generated-note order for Counselling and Settlement
+- [x] Redesign group-session participant services with family child search, ages, language, interpretation, and single-open accordions
+- [x] Department-scoped access everywhere (clients, appointments, referrals, documents, follow-ups, group sessions, staff, activity, reports) + family-grouped client list
+- [x] ACN Client Services Summary + Monthly Activity Report exports (Funder reports menu on Reports)
+- [x] Reports PDF export and single-open Monthly Activity accordion
+- [x] Export to PDF options for both funder reports (Excel and PDF side by side)
+- [x] Counselling Monthly Report inside Counselling case notes + manager panel with Excel/PDF export
+
+- [x] Counselling Monthly Report moved out of case notes into its own form beside Funder reports (Excel/PDF, auto-saved draft)
+- [x] Case note restored to pre-Counselling-screenshots form
+- [x] Sign-in verification code (email or SMS to registered phone) + change-password card and phone field on My profile
+- [x] My profile presented as single-open accordion sections (like Intake): Profile details + Change password
+- [x] Clients page F-pattern layout: Open File button in left column, intake form grouped into Identity / Contact sections
+- [x] Monthly Activity report: apply the same F-pattern layout (single-column, labels above fields, vertical options)
+- [x] Counselling Monthly Activity Report: rebuild display + Excel/PDF exports to match the manager's Excel layout (monthly & year-to-date tables, demographics, services, session recap, referrals, written highlights; recorded data only)
+- [x] Match Counselling Monthly Activity Report colours to the manager's Excel template without changing figures or layout
+- [ ] Pricing proposal document with real figures — on hold, waiting for the user to say ready
+- [ ] Draft client contract — waiting for the user to ask for it
